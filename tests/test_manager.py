@@ -1,3 +1,4 @@
+from typing import List  # noqa: UP035
 import unittest
 
 from library_manager.book import Book
@@ -8,15 +9,14 @@ class TestLibraryManager(unittest.TestCase):
     """Тесты для функциональности LibraryManager."""
 
     def setUp(self) -> None:
-        """
-        Настройка тестов, создаем экземпляр LibraryManager и книги.
+        """Настройка тестов, создаем экземпляр LibraryManager и книги.
 
         :return: None
         """
         self.library_manager: LibraryManager = LibraryManager()
         self.book1: Book = Book("Book One", "Author One", 2000)
         self.book2: Book = Book("Book Two", "Author Two", 2010)
-        self.library_manager.books: list[Book] = [self.book1, self.book2]  
+        self.library_manager.books: List[Book] = [self.book1, self.book2]
 
     def test_add_book(self) -> None:
         """Тест добавления книги."""
@@ -31,7 +31,7 @@ class TestLibraryManager(unittest.TestCase):
         self.library_manager.add_book(
             existing_book.title, existing_book.author, existing_book.year
         )
-        self.assertEqual(len(self.library_manager.books), 2)  
+        self.assertEqual(len(self.library_manager.books), 2)
 
     def test_update_book_status(self) -> None:
         """Тест изменения статуса книги."""

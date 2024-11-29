@@ -1,11 +1,11 @@
 import json
+from typing import List
 
 from library_manager.book import Book
 
 
-def load_books(storage_file: str) -> list[Book]:
-    """
-    Загружает список книг из файла.
+def load_books(storage_file: str) -> List[Book]:
+    """Загружает список книг из файла.
 
     Эта функция открывает указанный файл и пытается загрузить данные книг. Если файл
     не найден или данные повреждены, возвращается пустой список. Если данные успешно
@@ -27,9 +27,8 @@ def load_books(storage_file: str) -> list[Book]:
         return []
 
 
-def save_books(books: list[Book], storage_file: str) -> None:
-    """
-    Сохраняет список книг в файл.
+def save_books(books: List[Book], storage_file: str) -> None:
+    """Сохраняет список книг в файл.
 
     Эта функция принимает список объектов `Book` и сохраняет
     их в указанный файл в формате JSON.

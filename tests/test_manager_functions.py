@@ -9,10 +9,9 @@ class TestManagerFunctions(unittest.TestCase):
 
     @patch("builtins.input", return_value="Book")
     def test_get_search_query_valid(self, mock_input) -> None:
-        """
-        Тест на правильный ввод для поиска.
+        """Тест на правильный ввод для поиска.
 
-        В данном тесте проверяется, что функция `get_search_query()` 
+        В данном тесте проверяется, что функция `get_search_query()`
         правильно обрабатывает
         ввод пользователя и возвращает строку для поиска.
 
@@ -27,24 +26,22 @@ class TestManagerFunctions(unittest.TestCase):
 
     @patch("builtins.input", side_effect=["2100", "2000"])
     def test_validate_year_invalid_too_large(self, mock_input) -> None:
-        """
-        Тест на неверный год (больше 2030).
+        """Тест на неверный год (больше 2030).
 
-        Этот тест проверяет, что функция `validate_year()` правильно возвращает год, 
+        Этот тест проверяет, что функция `validate_year()` правильно возвращает год,
         если первый ввод невалидный, а второй — корректный.
 
         :param mock_input: Мок для ввода пользователя.
         :return: None
         """
-        year: int = validate_year() 
+        year: int = validate_year()
         self.assertEqual(year, 2000)
 
     @patch("builtins.input", side_effect=["0", "2"])
     def test_get_status_input_valid(self, mock_input) -> None:
-        """
-        Тест на корректный ввод статуса.
+        """Тест на корректный ввод статуса.
 
-        В данном тесте проверяется, что функция `get_status_input()` правильно 
+        В данном тесте проверяется, что функция `get_status_input()` правильно
         обрабатывает некорректный ввод и затем возвращает правильный статус.
 
         :param mock_input: Мок для ввода пользователя.
