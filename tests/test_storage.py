@@ -1,6 +1,6 @@
 import json
 import os
-from typing import List  # noqa: UP035
+from typing import List 
 import unittest
 from unittest.mock import mock_open, patch
 

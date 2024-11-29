@@ -1,4 +1,4 @@
-from typing import List  # noqa: UP035
+from typing import List  
 import unittest
 
 from library_manager.book import Book
